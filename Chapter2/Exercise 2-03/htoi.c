@@ -47,7 +47,11 @@ unsigned long htoi(char s[])
         if (i == 0 && c == '0' && (s[1] == 'x' || s[1] == 'X')) {
             i = 1;
             continue;
-    }
+        }
+        else if( i == 0 ) {
+            return 0;
+        }
+        
     n *= 16;
     if (c >= '0' && c <= '9')
         n += c - '0';
